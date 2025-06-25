@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #ffffff; }
+    header, footer { background-color: #f8f9fa; padding: 1rem; text-align: center; }
+    main { padding: 2rem; max-width: 960px; margin: 0 auto; }
+    form { background: #f1f1f1; padding: 2rem; border-radius: 8px; }
+    input, textarea { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+    button { padding: 0.75rem 1.5rem; background: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; }
+    button:hover { background: #0056b3; }
+
+    @media (max-width: 768px) {
+      main { padding: 1rem; }
+      button { width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      header, footer { padding: 0.5rem; }
+      h1 { font-size: 1.5rem; }
+      p, label { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+  <header>
+    <h1>Contact Us</h1>
+    <p>Have questions or feedback? Send us a message below.</p>
+  </header>
+
+  <main>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Brand Name. All rights reserved.</p>
+    <p>
+      <a href="#" onclick="openPopup('privacy-policy.html')">Privacy Policy</a> |
+      <a href="#" onclick="openPopup('cookie-policy.html')">Cookie Policy</a> |
+      <a href="#" onclick="openPopup('terms-conditions.html')">Terms & Conditions</a> |
+      <a href="#" onclick="openPopup('affiliate-disclaimer.html')">Affiliate Disclaimer</a>
+    </p>
+  </footer>
+
+  <script>
+    function openPopup(url) {
+      window.open(url, '_blank', 'width=600,height=500,scrollbars=yes,resizable=yes');
+    }
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable common key shortcuts
+    document.addEventListener('keydown', function (e) {
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+            (e.ctrlKey && (e.key === 'U' || e.key === 'C' || e.key === 'S'))
+        ) {
+            e.preventDefault();
+        }
+    });
+  </script>
+</body>
+</html>
